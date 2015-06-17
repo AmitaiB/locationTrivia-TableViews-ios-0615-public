@@ -1,25 +1,24 @@
 //
-//  FISLocationsTableViewController.m
+//  FISTriviaTableViewController.m
 //  locationTrivia-tableviews
 //
 //  Created by Amitai Blickstein on 6/17/15.
 //  Copyright (c) 2015 Joe Burgess. All rights reserved.
 //
 
-#import "FISLocationsTableViewController.h"
+#import "FISTriviaTableViewController.h"
 
-@interface FISLocationsTableViewController ()
-@property (nonatomic, strong) NSArray *locations;
-
+@interface FISTriviaTableViewController ()
+@property (nonatomic, strong) FISLocation *selectedLocation;
 
 @end
 
-@implementation FISLocationsTableViewController
+@implementation FISTriviaTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.accessibilityLabel = @"Locations Table";
-    self.tableView.accessibilityIdentifier = @"Locations Table";
+    self.tableView.accessibilityLabel = @"Trivia Table";
+    self.tableView.accessibilityIdentifier = @"Trivia Table";
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -37,44 +36,26 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSUInteger numberOfLocations = [self.locations count];
-    return numberOfLocations;
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Locations Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    NSUInteger currentRow = self.tableView.indexPathForSelectedRow.row;
-    FISLocation *thisRowsLocation = self.locations[currentRow];
-    
-    NSUInteger numOfTriviaPerLocation = [thisRowsLocation.trivia count];
-    
-    cell.textLabel.text = thisRowsLocation.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lul", (unsigned long)numOfTriviaPerLocation];
+    // Configure the cell...
     
     return cell;
 }
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FISTriviaTableViewController *destination = segue.destinationViewController;
-    destination.
-    
-    
-    
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -110,7 +91,14 @@
 }
 */
 
+/*
+#pragma mark - Navigation
 
-
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

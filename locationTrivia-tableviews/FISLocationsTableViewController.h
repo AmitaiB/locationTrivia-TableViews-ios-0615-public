@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FISLocation.h"
 #import "FISTrivia.h"
+#import "FISTriviaTableViewController.h"
 
 @interface FISLocationsTableViewController : UITableViewController
 

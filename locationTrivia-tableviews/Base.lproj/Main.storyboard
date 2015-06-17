@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cjm-ef-ffZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Locations Cell" textLabel="F6u-Zq-JSr" detailTextLabel="7aH-j1-9Pe" style="IBUITableViewCellStyleValue1" id="4xl-d6-gjJ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Locations Cell" textLabel="F6u-Zq-JSr" detailTextLabel="7aH-j1-9Pe" style="IBUITableViewCellStyleValue1" id="4xl-d6-gjJ">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4xl-d6-gjJ" id="uZ0-Pi-1Lv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -33,6 +33,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="g7b-Xv-CWE" kind="push" identifier="triviumSegue" id="ehE-it-O8W"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -40,8 +43,54 @@
                             <outlet property="delegate" destination="gsG-Ev-AOS" id="ZVU-9z-Ere"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="yyz-rb-BxV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EC8-KB-B6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475" y="320"/>
+        </scene>
+        <!--Trivia Table View Controller-->
+        <scene sceneID="769-nL-Jim">
+            <objects>
+                <tableViewController id="g7b-Xv-CWE" customClass="FISTriviaTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fZI-VX-gyE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Mde-2s-8so">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mde-2s-8so" id="UaU-qD-yHO">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g7b-Xv-CWE" id="xe7-a6-TgH"/>
+                            <outlet property="delegate" destination="g7b-Xv-CWE" id="nBN-SJ-5Qw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BCV-Dh-rG2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAa-uQ-fLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="320"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dcj-Ll-QTx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cjm-ef-ffZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5OO-Ns-2F3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gsG-Ev-AOS" kind="relationship" relationship="rootViewController" id="kvH-2e-dgy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmz-WC-Nqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="320"/>
         </scene>
