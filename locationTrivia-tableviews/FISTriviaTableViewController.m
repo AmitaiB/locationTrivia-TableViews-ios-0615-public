@@ -9,8 +9,7 @@
 #import "FISTriviaTableViewController.h"
 
 @interface FISTriviaTableViewController ()
-@property (nonatomic, strong) FISLocation *selectedLocation;
-
+@property (nonatomic, strong) FISLocation *myLocation;
 @end
 
 @implementation FISTriviaTableViewController

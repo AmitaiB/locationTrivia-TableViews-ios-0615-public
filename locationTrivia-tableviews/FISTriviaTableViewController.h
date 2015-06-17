@@ -10,5 +10,6 @@
 #import "FISLocationsTableViewController.h"
 
 @interface FISTriviaTableViewController : UITableViewController
+@property (nonatomic, strong) FISLocation *selectedLocation;
 
 @end
