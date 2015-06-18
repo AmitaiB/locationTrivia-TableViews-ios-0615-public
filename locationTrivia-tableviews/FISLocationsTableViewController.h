@@ -12,5 +12,6 @@
 #import "FISTriviaTableViewController.h"
 
 @interface FISLocationsTableViewController : UITableViewController
+@property (nonatomic, strong) NSArray *locations;
 
 @end

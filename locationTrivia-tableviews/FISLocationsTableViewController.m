@@ -9,7 +9,6 @@
 #import "FISLocationsTableViewController.h"
 
 @interface FISLocationsTableViewController ()
-@property (nonatomic, strong) NSArray *locations;
 
 
 @end
