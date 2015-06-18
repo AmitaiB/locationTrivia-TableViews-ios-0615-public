@@ -49,14 +49,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Locations Cell" forIndexPath:indexPath];
+    FISLocation *thisRowsLocationObject = self.locations[indexPath.row]; //NOT self.tableView.indexPathForSelectedRow.row
     
-    NSUInteger numOfCurrentRow = self.tableView.indexPathForSelectedRow.row; //indexPath.row;??
-    FISLocation *thisRowsLocationObject = self.locations[numOfCurrentRow];
-    
-    NSUInteger numOfTriviaPerLocation = [thisRowsLocationObject.trivia count];
+    NSUInteger numOfTriviaInThisRowsLocation = [thisRowsLocationObject.trivia count];
     
     cell.textLabel.text = thisRowsLocationObject.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lul", (unsigned long)numOfTriviaPerLocation];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)numOfTriviaInThisRowsLocation];
     
     return cell;
 }
