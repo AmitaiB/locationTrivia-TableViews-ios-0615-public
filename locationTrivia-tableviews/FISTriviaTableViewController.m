@@ -9,7 +9,8 @@
 #import "FISTriviaTableViewController.h"
 
 @interface FISTriviaTableViewController ()
-@property (nonatomic, strong) FISLocation *myLocation;
+//@property (nonatomic, strong) FISLocation *myLocation;
+
 @end
 
 @implementation FISTriviaTableViewController
@@ -41,14 +42,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.myLocation.trivia count];
+    return [self.selectedLocation.trivia count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"triviumCell" forIndexPath:indexPath];
     
-    FISTrivia *myTrivium = self.myLocation.trivia[indexPath.row];
+    FISTrivia *myTrivium = self.selectedLocation.trivia[indexPath.row];
     // Configure the cell...
     cell.textLabel.text = myTrivium.content;
     
