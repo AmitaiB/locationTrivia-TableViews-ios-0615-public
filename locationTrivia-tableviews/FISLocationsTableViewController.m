@@ -50,12 +50,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Locations Cell" forIndexPath:indexPath];
     
-    NSUInteger currentRow = self.tableView.indexPathForSelectedRow.row;
-    FISLocation *thisRowsLocation = self.locations[currentRow];
+    NSUInteger numOfCurrentRow = self.tableView.indexPathForSelectedRow.row; //indexPath.row;??
+    FISLocation *thisRowsLocationObject = self.locations[numOfCurrentRow];
     
-    NSUInteger numOfTriviaPerLocation = [thisRowsLocation.trivia count];
+    NSUInteger numOfTriviaPerLocation = [thisRowsLocationObject.trivia count];
     
-    cell.textLabel.text = thisRowsLocation.name;
+    cell.textLabel.text = thisRowsLocationObject.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%lul", (unsigned long)numOfTriviaPerLocation];
     
     return cell;
@@ -67,7 +67,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     FISTriviaTableViewController *destination = segue.destinationViewController;
     
+    NSUInteger numOfCurrentRow = self.tableView.indexPathForSelectedRow.row;
+    FISLocation *thisRowsLocationObject = self.locations[numOfCurrentRow];
     
+    destination.selectedLocation = thisRowsLocationObject;
     
     
     
